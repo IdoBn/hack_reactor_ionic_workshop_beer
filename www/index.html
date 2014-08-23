@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-energized">
+        <h1 class="title">Ionic Blank Starter</h1>
+        <button class='button button-energized'><i class="icon ion-help"></i></button>
+      </ion-header-bar>
+      <ion-content ng-controller='BeersCtrl as beersCtrl'>
+        <div class='card' ng-repeat='beer in beersCtrl.beers'>
+          <div class='item item-divider'>{{beer.name}}</div>
+          <div class='item item-text-wrap'>{{beer.description}}</div>
+          <div class='item item-divider'>
+            <small>{{beer.brewery.name}}</small>
+            <small class='abv'>{{beer.abv}}</small>
+          </div>
+        </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
